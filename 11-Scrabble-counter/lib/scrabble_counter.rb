@@ -6,5 +6,7 @@ SCRABBLE_POINTS = { "A"=>1, "B"=>3, "C"=>3, "D"=>2,
 
 def scrabble_counter(sentence)
   # TODO: return the total number of points scored for the sentencec based on the hash above
-
+  res =0
+  sentence.upcase.delete(" ?./§,;:!-").split("").each { |letter| res += SCRABBLE_POINTS[letter]}
+  res
 end
